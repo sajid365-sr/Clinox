@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/logo-3.svg";
-import { FaPhoneAlt, FaSearch } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 import { HiMailOpen, HiOutlineSearch } from "react-icons/hi";
 
 const Header = () => {

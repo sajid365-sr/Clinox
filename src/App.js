@@ -1,12 +1,12 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
+import { router } from "./Routes/PublicRoutes/PublicRoutes";
 
 function App() {
   return (
-    <div>
-      <h1>Client side is running</h1>
-      <button className="btn btn-primary">Click Me</button>
-      <button className="btn btn-outline">Click Me</button>
-    </div>
+    <RouterProvider router={router}>
+
+    </RouterProvider>
   );
 }
 

@@ -5,19 +5,20 @@ import google from "../../../Assets/google-play.png";
 import apple from "../../../Assets/apple-store.png";
 import { FaTwitter, FaFacebook, FaLinkedinIn } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
+import './Footer.css';
 
 const Footer = () => {
   return (
     
-      <footer class="bg-white dark:bg-gray-900 ">
+      <footer class="bg-[#0e3d4bb7] text-white">
         
         <div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4 container mx-auto">
           <div className="flex flex-col gap-8">
             <div className="text-start">
-              <Link to='/'>
+             
               <img src={logo} alt="Clinox logo" />
-              </Link>
-              <span className="uppercase text-xs font-bold">Cleaning Services</span>
+              
+              <span className="uppercase text-xs font-semibold tracking-widest">Cleaning Services</span>
             </div>
             <div>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae odit
@@ -25,74 +26,73 @@ const Footer = () => {
               quisquam.
             </div>
             <div className="flex gap-3 justify-between">
-              <img className="w-1/2 hover:cursor-pointer" src={google} alt="Google Play" />
-              <img className="w-1/2 hover:cursor-pointer" src={apple} alt="Apple Store" />
+              <img className="w-1/2 hover:cursor-pointer hover:-translate-y-2 transition-all ease-in-out duration-300" src={google} alt="Google Play" />
+              <img className="w-1/2 hover:cursor-pointer hover:-translate-y-2 transition-all ease-in-out duration-300" src={apple} alt="Apple Store" />
             </div>
           </div>
           <div className="ml-10">
-            <h2 class="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">
+            <h2 class="mb-10 text-xl  font-semibold uppercase text-white">
               Site map
             </h2>
-            <ul class="text-gray-500 dark:text-gray-400">
+            <ul class="text-white">
               <li class="mb-4">
-                <Link to="/home">Home</Link>
+                
+                <Link to="/home" data-replace="Home"><span>Home</span></Link>
               </li>
               <li class="mb-4">
-                <Link to="/services">Services</Link>
+                
+                <Link to="/services" data-replace="Services"><span>Services</span></Link>
               </li>
               <li class="mb-4">
-                <Link to="/blog">Blog</Link>
+                
+                <Link to="/blog" data-replace="Blog"><span>Blog</span></Link>
               </li>
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">
+            <h2 class="mb-10 text-xl  font-semibold text-white">
               Help center
             </h2>
-            <ul class="text-gray-500 dark:text-gray-400">
+            <ul class="text-white">
               <li class="mb-4">
-                <Link href="#" class="hover:underline">
-                  Twitter
-                </Link>
+               <Link data-replace="Twitter"><span>Twitter</span></Link>
               </li>
               <li class="mb-4">
-                <Link href="#" class="hover:underline">
-                  Facebook
-                </Link>
+              <Link data-replace="Facebook"><span>Facebook</span></Link>
               </li>
               <li class="mb-4">
-                <Link href="#" class="hover:underline">
-                  Contact Us
-                </Link>
+              <Link data-replace="Contact Us"><span>Contact Us</span></Link>
               </li>
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">
+            <h2 class="mb-10 text-xl  font-semibold text-white">
               Legal
             </h2>
-            <ul class="text-gray-500 dark:text-gray-400">
-              <li class="mb-4">
-                <Link class="hover:underline">Privacy Policy</Link>
+            <ul class="text-white">
+              <li class="mb-4 hover:translate-x-2 transition-all ease-in duration-300">
+                
+                <Link data-replace="Privacy Policy"><span>Privacy Policy</span></Link>
               </li>
-              <li class="mb-4">
-                <Link class="hover:underline">Terms &amp; Conditions</Link>
+              <li class="mb-4 hover:translate-x-2 transition-all ease-in duration-300">
+          
+                <Link data-replace="Terms &amp; Conditions"><span>Terms &amp; Conditions</span></Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="py-6 px-4 bg-gray-100 items-center dark:bg-gray-700  ">
+        <div class="py-6 px-4 items-center bg-[#0E3D4B]">
           <div className="container mx-auto md:flex md:items-center md:justify-between">
-          <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+          <span class="text-sm text-gray-200 sm:text-center">
             © 2022 Clinox All Rights
             Reserved.
           </span>
           <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
-            <FaFacebook className="text-2xl hover:text-[#0E3D4B] cursor-pointer"></FaFacebook>
-            <FaTwitter className="text-2xl hover:text-[#0E3D4B] cursor-pointer"></FaTwitter>
-            <FaLinkedinIn className="text-2xl hover:text-[#0E3D4B] cursor-pointer"></FaLinkedinIn>
-            <BsInstagram className="text-2xl hover:text-[#0E3D4B] cursor-pointer"></BsInstagram>
+            <FaFacebook className="text-3xl hover:text-[#17a8d4] hover:scale-90 transition-all ease-in duration-75 cursor-pointer"></FaFacebook>
+            <FaTwitter className="text-3xl hover:text-[#17a8d4] hover:scale-90 transition-all ease-in duration-75 cursor-pointer"></FaTwitter>
+            <FaLinkedinIn className="text-3xl hover:text-[#17a8d4] hover:scale-90 transition-all ease-in duration-75 cursor-pointer"></FaLinkedinIn>
+            <BsInstagram className="text-3xl hover:text-[#17a8d4] hover:scale-90 transition-all ease-in duration-75 cursor-pointer"></BsInstagram>
           </div>
           </div>
         </div>

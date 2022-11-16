@@ -1,16 +1,20 @@
+import React from "react";
+import Banner from "./Banner/Banner";
+import "./Home.css";
+import ServiceHIghLight from "./ServiceHIghLight/ServiceHIghLight";
+import WhyMe from "./WhyMe/WhyMe";
 
-import React, { useContext } from 'react';
-import { UserContext } from '../../contexts/AuthContext/AuthContext';
 
 const Home = () => {
-    const {name} = useContext(UserContext);
-    console.log(name)
+ 
 
-    return (
-        <div>
-            <h2>This is home page</h2>
-        </div>
-    );
+  return (
+   <div>
+     <Banner></Banner>
+     <ServiceHIghLight></ServiceHIghLight>
+     <WhyMe></WhyMe>
+   </div>
+  );
 };
 
 export default Home;

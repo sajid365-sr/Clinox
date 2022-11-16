@@ -10,9 +10,9 @@ import './Footer.css';
 const Footer = () => {
   return (
     
-      <footer class="bg-[#0e3d4bb7] text-white">
+      <footer className="bg-[#0e3d4bb7] text-white">
         
-        <div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4 container mx-auto">
+        <div className="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4 container mx-auto">
           <div className="flex flex-col gap-8">
             <div className="text-start">
              
@@ -31,50 +31,50 @@ const Footer = () => {
             </div>
           </div>
           <div className="ml-10">
-            <h2 class="mb-10 text-xl  font-semibold uppercase text-white">
+            <h2 className="mb-10 text-xl  font-semibold uppercase text-white">
               Site map
             </h2>
-            <ul class="text-white">
-              <li class="mb-4">
+            <ul className="text-white">
+              <li className="mb-4">
                 
                 <Link to="/home" data-replace="Home"><span>Home</span></Link>
               </li>
-              <li class="mb-4">
+              <li className="mb-4">
                 
                 <Link to="/services" data-replace="Services"><span>Services</span></Link>
               </li>
-              <li class="mb-4">
+              <li className="mb-4">
                 
                 <Link to="/blog" data-replace="Blog"><span>Blog</span></Link>
               </li>
             </ul>
           </div>
           <div>
-            <h2 class="mb-10 text-xl  font-semibold text-white">
+            <h2 className="mb-10 text-xl  font-semibold text-white">
               Help center
             </h2>
-            <ul class="text-white">
-              <li class="mb-4">
+            <ul className="text-white">
+              <li className="mb-4">
                <Link data-replace="Twitter"><span>Twitter</span></Link>
               </li>
-              <li class="mb-4">
+              <li className="mb-4">
               <Link data-replace="Facebook"><span>Facebook</span></Link>
               </li>
-              <li class="mb-4">
+              <li className="mb-4">
               <Link data-replace="Contact Us"><span>Contact Us</span></Link>
               </li>
             </ul>
           </div>
           <div>
-            <h2 class="mb-10 text-xl  font-semibold text-white">
+            <h2 className="mb-10 text-xl  font-semibold text-white">
               Legal
             </h2>
-            <ul class="text-white">
-              <li class="mb-4 hover:translate-x-2 transition-all ease-in duration-300">
+            <ul className="text-white">
+              <li className="mb-4 hover:translate-x-2 transition-all ease-in duration-300">
                 
                 <Link data-replace="Privacy Policy"><span>Privacy Policy</span></Link>
               </li>
-              <li class="mb-4 hover:translate-x-2 transition-all ease-in duration-300">
+              <li className="mb-4 hover:translate-x-2 transition-all ease-in duration-300">
           
                 <Link data-replace="Terms &amp; Conditions"><span>Terms &amp; Conditions</span></Link>
               </li>
@@ -82,13 +82,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div class="py-6 px-4 items-center bg-[#0E3D4B]">
+        <div className="py-6 px-4 items-center bg-[#0E3D4B]">
           <div className="container mx-auto md:flex md:items-center md:justify-between">
-          <span class="text-sm text-gray-200 sm:text-center">
-            © 2022 Clinox All Rights
-            Reserved.
+          <span className="text-sm text-gray-200 text-center">
+            © 2022 Clinox All Rights Reserved.
           </span>
-          <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
+          <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
             <FaFacebook className="text-3xl hover:text-[#17a8d4] hover:scale-90 transition-all ease-in duration-75 cursor-pointer"></FaFacebook>
             <FaTwitter className="text-3xl hover:text-[#17a8d4] hover:scale-90 transition-all ease-in duration-75 cursor-pointer"></FaTwitter>
             <FaLinkedinIn className="text-3xl hover:text-[#17a8d4] hover:scale-90 transition-all ease-in duration-75 cursor-pointer"></FaLinkedinIn>

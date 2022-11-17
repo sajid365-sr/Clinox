@@ -9,7 +9,7 @@ const ServiceCard = ({ service }) => {
   return (
     <div>
       <div className="max-w-sm">
-        <Card className="p-5 mb-8 shadow-xl" imgSrc={picture}>
+        <Card className="p-5 mb-8 shadow-xl " imgSrc={picture}>
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
             {serviceName}
           </h5>
@@ -35,7 +35,7 @@ const ServiceCard = ({ service }) => {
             </span>
             <Link
               to={`/services/${_id}`}
-              class="text-white bg-[#0E3D4B] hover:bg-[#1d738d] focus:ring-2 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center  "
+              class="text-white hover:scale-95 transition-all ease-out duration-300 bg-[#0E3D4B] hover:bg-[#1d738d] focus:ring-2 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center  "
             >
               View Details
             </Link>

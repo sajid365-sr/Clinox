@@ -15,8 +15,8 @@ const ServiceHIghLight = () => {
         })
     }, [])
     return (
-        <div>
-            <h1 className='text-4xl font-semibold text-[#0E3D4B] text-center my-10'>Let's have a look!!</h1>
+        <div className='my-32'>
+            <h1 className='text-4xl font-semibold text-[#0E3D4B] text-center my-10'>Find My Services</h1>
             <div className='grid grid-cols-1 w-10/12 lg:w-full lg:grid-cols-3 container mx-auto mb-10'>
             {
                 services.map(service => <ServiceCard
@@ -28,7 +28,7 @@ const ServiceHIghLight = () => {
             <div className='text-center'>
             <Link
               to='/services'
-              class="text-white bg-[#0E3D4B] hover:bg-[#1d738d] focus:ring-2 focus:outline-none  font-medium rounded-lg text-sm px-5 py-3 text-center "
+              class="text-white hover:scale-95 transition-all ease-out duration-300 bg-[#0E3D4B] hover:bg-[#1d738d] focus:ring-2 focus:outline-none  font-medium rounded-lg text-sm px-5 py-3 text-center "
             >
               View All Services
             </Link>

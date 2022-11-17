@@ -20,13 +20,13 @@ const WhyMe = () => {
   };
 
   return (
-    <div className="container mx-auto my-24">
+    <div className="container mx-auto my-32">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="">
           <img className="rounded-lg lg:w-2/3 w-10/12 mx-auto lg:ml-10 h-full" src={whyMe} alt="" />
         </div>
         <div>
-          <p className="text-center mt-10 lg:mt-0 lg:text-left">Cleaning Service</p>
+          <p className="text-center font-semibold underline mt-10 lg:mt-0 lg:text-left">Cleaning Service</p>
           <h1 className="lg:text-5xl text-4xl text-center lg:text-left font-medium lg:mt-6 mb-3 lg:mb-10 leading-snug">
             Why will you choose my <br />
             services for your ?
@@ -35,7 +35,7 @@ const WhyMe = () => {
           <div className='w-10/12 lg:w-full mx-auto'>
           <Fragment>
             <Accordion open={open === 1} animate={customAnimation}>
-              <AccordionHeader className="bg-[#0E3D4B] text-gray-200 rounded-full px-5 hover:text-gray-400 mb-3" onClick={() => handleOpen(1)}>
+              <AccordionHeader className="bg-[#0E3D4B] text-gray-200 rounded-full hover:scale-95 transition-all ease-out duration-700 px-5 hover:text-gray-400 mb-3" onClick={() => handleOpen(1)}>
                 How often will you clean my home?
               </AccordionHeader>
               <AccordionBody>
@@ -46,7 +46,7 @@ const WhyMe = () => {
               </AccordionBody>
             </Accordion>
             <Accordion open={open === 2} animate={customAnimation}>
-              <AccordionHeader className="bg-[#0E3D4B] text-gray-200 rounded-full px-5 hover:text-gray-400 mb-3" onClick={() => handleOpen(2)}>
+              <AccordionHeader className="bg-[#0E3D4B] hover:scale-95 transition-all ease-out duration-700 text-gray-200 rounded-full px-5 hover:text-gray-400 mb-3" onClick={() => handleOpen(2)}>
                 What cleaning products will you be using?
               </AccordionHeader>
               <AccordionBody>
@@ -82,7 +82,7 @@ const WhyMe = () => {
               </AccordionBody>
             </Accordion>
             <Accordion open={open === 3} animate={customAnimation}>
-              <AccordionHeader className="bg-[#0E3D4B] text-gray-200 rounded-full px-5 hover:text-gray-400 mb-3" onClick={() => handleOpen(3)}>
+              <AccordionHeader className="bg-[#0E3D4B] hover:scale-95 transition-all ease-out duration-700 text-gray-200 rounded-full px-5 hover:text-gray-400 mb-3" onClick={() => handleOpen(3)}>
               Do you offer a satisfaction guarantee?
               </AccordionHeader>
               <AccordionBody>
@@ -90,7 +90,7 @@ const WhyMe = () => {
               </AccordionBody>
             </Accordion>
             <Accordion open={open === 4} animate={customAnimation}>
-              <AccordionHeader className="bg-[#0E3D4B] text-gray-200 rounded-full px-5 hover:text-gray-400 mb-3" onClick={() => handleOpen(4)}>
+              <AccordionHeader className="bg-[#0E3D4B] hover:scale-95 transition-all ease-out duration-700 text-gray-200 rounded-full px-5 hover:text-gray-400 mb-3" onClick={() => handleOpen(4)}>
               Do I have to be home when you are cleaning?
               </AccordionHeader>
               <AccordionBody>
@@ -98,7 +98,7 @@ const WhyMe = () => {
               </AccordionBody>
             </Accordion>
             <Accordion open={open === 5} animate={customAnimation}>
-              <AccordionHeader className="bg-[#0E3D4B] text-gray-200 rounded-full px-5 hover:text-gray-400 mb-3" onClick={() => handleOpen(5)}>
+              <AccordionHeader className="bg-[#0E3D4B] hover:scale-95 transition-all ease-out duration-700 text-gray-200 rounded-full px-5 hover:text-gray-400 mb-3" onClick={() => handleOpen(5)}>
               How do I pay for my cleaning services?
               </AccordionHeader>
               <AccordionBody>

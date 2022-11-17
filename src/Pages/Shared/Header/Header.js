@@ -127,7 +127,7 @@ const Header = () => {
       </nav>
 
       <nav className="w-11/12 mx-auto lg:w-full">
-        <div className=" bg-[#0E3D4B] text-white py-6 my-3 rounded-lg  mx-auto max-w-screen-xl md:px-6">
+        <div className=" bg-[#0E3D4B] text-white py-3 lg:py-6 my-3 rounded-lg  mx-auto max-w-screen-xl md:px-6">
           <div className="flex justify-between lg:px-8 items-center">
             <ul className="flex flex-row mt-0 mr-6 space-x-8 lg:space-x-16 text-lg font-medium">
               <li className="ml-4 lg:ml-0">

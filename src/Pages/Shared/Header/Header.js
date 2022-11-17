@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/logo-3.svg";
 import { FaPhoneAlt } from "react-icons/fa";
 import { HiMailOpen, HiOutlineSearch } from "react-icons/hi";
+import { UserContext } from "../../../contexts/AuthContext/AuthContext";
+
+
 
 const Header = () => {
+
+  const {user, logOut} = useContext(UserContext);
+
+  const signOut = () =>{
+    logOut()
+    .then(() =>{
+
+    })
+    .catch(e => console.error(e))
+  }
+
   return (
     <div className="relative">
       <nav className="bg-white border-gray-200 my-3 dark:bg-gray-900">
@@ -39,6 +53,17 @@ const Header = () => {
               </div>
             </div>
             <div>
+
+            <>
+            {
+              user?.uid?
+              <button onClick={signOut} className="relative inline-flex items-center justify-center p-0.5 lg:mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-[#0E3D4B] to-[#0E3D4B]  hover:text-white dark:text-white focus:ring-4 focus:outline-none">
+                  <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    Logout
+                  </span>
+                </button>
+              :
+              <>
               <Link to="/login">
                 <button className="relative inline-flex items-center justify-center p-0.5 lg:mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-[#0E3D4B] to-[#0E3D4B]  hover:text-white dark:text-white focus:ring-4 focus:outline-none">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
@@ -57,6 +82,12 @@ const Header = () => {
                   </span>
                 </button>
               </Link>
+              </>
+
+            }
+            </>
+            
+              
             </div>
           </div>
         </div>
@@ -83,6 +114,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+
     </div>
   );
 };

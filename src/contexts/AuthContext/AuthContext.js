@@ -50,7 +50,7 @@ useEffect( () =>{
 
 }, []);
 
-const AuthInfo = {user, loading, signIn, providerLogin, logOut, createUser}
+const AuthInfo = {user, loading, signIn, providerLogin, logOut, createUser, setUser}
 
 
     return (

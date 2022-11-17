@@ -9,7 +9,7 @@ const Blog = () => {
       </h3>
 
       <article className="mx-auto lg:w-3/4 w-10/12 rounded-lg lg:p-10 p-5 mb-5 bg-gray-300 bg-opacity-50">
-        <h2 className="text-center text-3xl pb-5 text-cyan-800">
+        <h2 className="text-center font-semibold text-3xl pb-5 text-cyan-800">
           what is the difference between SQL and NoSQL?
         </h2>
         <p>
@@ -40,7 +40,7 @@ const Blog = () => {
         </p>
       </article>
       <article className="mx-auto lg:w-3/4 w-10/12 rounded-lg lg:p-10 p-5 mb-5 bg-gray-300 bg-opacity-50">
-        <h2 className="text-center text-3xl pb-5 text-cyan-800">
+        <h2 className="text-center font-semibold text-3xl pb-5 text-cyan-800">
           What is the difference between javascript and Node JS?
         </h2>
         <p>
@@ -58,7 +58,7 @@ const Blog = () => {
         </p>
       </article>
       <article className="mx-auto lg:w-3/4 w-10/12 rounded-lg lg:p-10 p-5 mb-5 bg-gray-300 bg-opacity-50">
-        <h2 className="text-center text-3xl pb-5 text-cyan-800">
+        <h2 className="text-center font-semibold text-3xl pb-5 text-cyan-800">
           What is JWT, and how does it work?
         </h2>
         <p>
@@ -83,7 +83,7 @@ const Blog = () => {
         </p>
       </article>
       <article className="mx-auto lg:w-3/4 w-10/12 rounded-lg lg:p-10 p-5 mb-5 bg-gray-300 bg-opacity-50">
-        <h2 className="text-center text-3xl pb-5 text-cyan-800">
+        <h2 className="text-center font-semibold text-3xl pb-5 text-cyan-800">
         How does Node JS handle multiple requests at the same time?
         </h2>
         <p>

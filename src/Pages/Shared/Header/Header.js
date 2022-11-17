@@ -4,12 +4,15 @@ import logo from "../../../Assets/logo-3.svg";
 import { FaPhoneAlt } from "react-icons/fa";
 import { HiMailOpen, HiOutlineSearch } from "react-icons/hi";
 import { UserContext } from "../../../contexts/AuthContext/AuthContext";
+import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import { FaUserAlt } from "react-icons/fa";
 
 
 
 const Header = () => {
 
   const {user, logOut} = useContext(UserContext);
+  console.log(user)
 
   const signOut = () =>{
     logOut()
@@ -57,11 +60,40 @@ const Header = () => {
             <>
             {
               user?.uid?
-              <button onClick={signOut} className="relative inline-flex items-center justify-center p-0.5 lg:mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-[#0E3D4B] to-[#0E3D4B]  hover:text-white dark:text-white focus:ring-4 focus:outline-none">
-                  <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                    Logout
-                  </span>
-                </button>
+              <Navbar
+              fluid={true}
+              rounded={true}
+            >
+              
+              <div className="flex md:order-2">
+                <Dropdown
+                  arrowIcon={false}
+                  inline={true}
+                  label={user?.photoURL? <Avatar alt="" 
+                  img={user?.photoURL}
+                  rounded={true}/> : <FaUserAlt></FaUserAlt>}
+                >
+                  <Dropdown.Header>
+                    <span className="block text-sm">
+                      {user?.displayName}
+                    </span>
+                    <span className="block truncate text-sm font-medium">
+                      {user?.email}
+                    </span>
+                  </Dropdown.Header>
+        
+                  <Dropdown.Item>
+                    Settings
+                  </Dropdown.Item>
+                 
+                  <Dropdown.Divider />
+                  <Dropdown.Item onClick={signOut}>
+                    Sign out
+                  </Dropdown.Item>
+                </Dropdown>
+              </div>
+              
+            </Navbar>
               :
               <>
               <Link to="/login">
@@ -115,6 +147,9 @@ const Header = () => {
         </div>
       </nav>
 
+
+
+    
     </div>
   );
 };

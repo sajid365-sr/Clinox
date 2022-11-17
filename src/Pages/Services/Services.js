@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import ServiceCard from './ServiceCard';
+import ServiceCard from './ServiceCard/ServiceCard';
 
 const Services = () => {
     const services = useLoaderData();
@@ -12,7 +12,7 @@ const Services = () => {
             <div className='grid grid-cols-1 w-10/12 lg:w-full lg:grid-cols-3 container mx-auto mb-10'>
             {
                 services.map(service => <ServiceCard
-                key={service.id}
+                key={service._id}
                 service={service}
                 ></ServiceCard>)
             }

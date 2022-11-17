@@ -2,7 +2,7 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="container mb-24">
+    <div className="container mx-auto mb-24">
       <h3 className="text-center my-10 lg:text-4xl text-3xl font-semibold">
         Some Important Questions You <br />
         Should Know About !!

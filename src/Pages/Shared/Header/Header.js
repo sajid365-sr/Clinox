@@ -12,7 +12,7 @@ import { FaUserAlt } from "react-icons/fa";
 const Header = () => {
 
   const {user, logOut} = useContext(UserContext);
-  console.log(user)
+  
 
   const signOut = () =>{
     logOut()
@@ -69,9 +69,10 @@ const Header = () => {
                 <Dropdown
                   arrowIcon={false}
                   inline={true}
-                  label={user?.photoURL? <Avatar alt="" 
+                  label={user?.photoURL? <Avatar status="online" bordered={true} alt="" 
                   img={user?.photoURL}
-                  rounded={true}/> : <FaUserAlt></FaUserAlt>}
+                  rounded={true}/> : <Avatar rounded={true} status="online" bordered={true} />}
+                  
                 >
                   <Dropdown.Header>
                     <span className="block text-sm">

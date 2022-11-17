@@ -24,6 +24,14 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+
+    //Get JWT
+    fetch('http://localhost:5000/jwt')
+    .then(res => res.json())
+    .then(data => {
+        localStorage.setItem('Clinox JW Token',JSON.stringify(data))
+    })
+
     // email-password login
     signIn(email, password)
       .then((result) => {
@@ -35,6 +43,7 @@ const Login = () => {
       .catch((e) => {
         setError(e.message);
       });
+
   };
 
   // Google sign in

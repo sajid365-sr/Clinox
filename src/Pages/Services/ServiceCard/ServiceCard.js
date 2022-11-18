@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
   const { _id, ratings, serviceCharge, serviceName, picture } = service;
-  console.log(service);
+  
 
   return (
     <div>
@@ -35,7 +35,7 @@ const ServiceCard = ({ service }) => {
             </span>
             <Link
               to={`/services/${_id}`}
-              class="text-white hover:scale-95 transition-all ease-out duration-300 bg-[#0E3D4B] hover:bg-[#1d738d] focus:ring-2 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center  "
+              className="text-white hover:scale-95 transition-all ease-out duration-300 bg-[#0E3D4B] hover:bg-[#1d738d] focus:ring-2 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center  "
             >
               View Details
             </Link>

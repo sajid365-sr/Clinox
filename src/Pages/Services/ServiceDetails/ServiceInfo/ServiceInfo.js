@@ -30,7 +30,7 @@ const ServiceInfo = ({service}) => {
               </h1>
               <div>
                 {highlights.map((feature) => (
-                  <li>{feature}</li>
+                  <li key={feature}>{feature}</li>
                 ))}
               </div>
               <p className="mt-5 text-xl">Within <span className="text-4xl text-orange-400 text-semibold">{duration}</span> days</p>

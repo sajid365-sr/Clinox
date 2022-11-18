@@ -22,17 +22,17 @@ const ClientSay = () => {
     
 
   return (
-    <div className="container mx-auto mb-24 mt-32">
-      <h1 className="text-5xl text-[#0E3D4B] text-center mb-10 font-medium">
+    <div className="container mx-auto mb-24 lg:mt-32 mt-24">
+      <h1 className="lg:text-5xl text-4xl text-[#0E3D4B] text-center mb-10 font-medium">
         Whats my clients say
       </h1>
       
-      <div className="grid h-56 grid-cols-2 gap-4 sm:h-64 xl:h-80 2xl:h-96">
+      <div className="grid lg:h-56 h-96  grid-cols-1 lg:grid-cols-2  gap-4 2xl:h-96">
         <Carousel>
           {
               clients1.map(client =>
             
-                <div key={client.id.value} className="bg-[#0E3D4B] p-32 text-gray-400">
+                <div key={client.id.value} className="bg-[#0E3D4B] rounded-lg lg:p-32 py-10 px-5 w-11/12 lg:w-full  text-gray-400">
             <div className="flex justify-center items-center flex-col">
               <Avatar
                 img={client.picture.large}
@@ -61,7 +61,7 @@ const ClientSay = () => {
         </Carousel>
        
       
-        <Carousel>
+        <Carousel className="hidden lg:block">
           {
               clients2.map(client =>
                 

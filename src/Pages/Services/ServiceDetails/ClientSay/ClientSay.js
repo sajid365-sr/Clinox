@@ -1,23 +1,50 @@
 import { Avatar, Carousel, Rating } from "flowbite-react";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../../../contexts/AuthContext/AuthContext";
 
-const ClientSay = () => {
 
-    const [clients1, setClients1] = useState([]);
-    const [clients2, setClients2] = useState([]);
+const ClientSay = ({service}) => {
 
+  const {user} = useContext(UserContext);
+  const [clients1, setClients1] = useState([]);
+  // const [clients2, setClients2] = useState([]);
+  const {_id} = service;
 
     useEffect( () =>{
-        fetch('https://randomuser.me/api/?results=5')
-        .then(res => res.json())
-        .then(data => setClients1(data.results))
-    } , [])
+      fetch(`http://localhost:5000/reviews/${_id}`)
+      .then(res => res.json())
+      .then(data =>{
+
+        // const newReview = [data,...clients1];
+        setClients1(data);
+       
+
+      })
+    },[_id,clients1]);
+
+  
     
-    useEffect( () =>{
-        fetch('https://randomuser.me/api/?results=5')
-        .then(res => res.json())
-        .then(data => setClients2(data.results))
-    } , [])
+
+
+    // useEffect( () =>{
+    //     fetch('https://randomuser.me/api/?results=5')
+    //     .then(res => res.json())
+    //     .then(data => {
+    //       if(!user){
+    //         setClients1(data.results)
+    //       }
+    //     })
+    // } , [user])
+    
+    // useEffect( () =>{
+    //     fetch('https://randomuser.me/api/?results=5')
+    //     .then(res => res.json())
+    //     .then(data => {
+    //       if(!user){
+    //         setClients2(data.results)
+    //       }
+    //     })
+    // } , [user])
 
     
 
@@ -32,27 +59,25 @@ const ClientSay = () => {
           {
               clients1.map(client =>
             
-                <div key={client.id.value} className="bg-[#0E3D4B] rounded-lg lg:p-32 py-10 px-5 w-11/12 lg:w-full  text-gray-400">
+                <div key={client._id} className="bg-[#0E3D4B] rounded-lg lg:p-32 py-10 px-5 w-11/12 lg:w-full  text-gray-400">
             <div className="flex justify-center items-center flex-col">
               <Avatar
-                img={client.picture.large}
+                img={client.photo }
                 rounded={true}
                 size="lg"
                 
               />
               <Rating className="my-5">
-                <Rating.Star />
-                <Rating.Star />
-                <Rating.Star />
-                <Rating.Star />
-                <Rating.Star />
+                {
+                  [...new Array(client.ratings).keys()].map(rating => <span key={rating}><Rating.Star /></span>)
+                }
+                
               </Rating>
               <p className="text-center mb-5">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Commodi incidunt dolorum alias consequuntur dolores officiis!
+                {client.feedback}
               </p>
-              <p className="text-white">{client.name.first + ' ' + client.name.last}</p>
-              <p className="text-center">{client.location.state + ' ' + client.location.country}</p>
+              <p className="text-white">{client.name}</p>
+              <p className="text-center">{client.address}</p>
             </div>
           </div> )
           }
@@ -61,7 +86,7 @@ const ClientSay = () => {
         </Carousel>
        
       
-        <Carousel className="hidden lg:block">
+        {/* <Carousel className="hidden lg:block">
           {
               clients2.map(client =>
                 
@@ -92,7 +117,7 @@ const ClientSay = () => {
          
           
         </Carousel>
-       
+        */}
       
       </div>
       

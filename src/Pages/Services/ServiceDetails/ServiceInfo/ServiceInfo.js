@@ -5,7 +5,7 @@ import './ServiceInfo.css';
 
 const ServiceInfo = ({service}) => {
 
-    const {_id,
+    const {
         about,
         customer,
         duration,
@@ -18,7 +18,7 @@ const ServiceInfo = ({service}) => {
         <div className="container  mx-auto my-20">
       <div className="flex lg:flex-row flex-col-reverse">
         
-        <div className="lg:p-24 p-10 w-11/12 mx-auto rounded-b-2xl lg:rounded-l-2xl lg:w-3/5 sDetails text-gray-300">
+        <div className="lg:p-24 p-10 w-11/12 mx-auto rounded-b-2xl lg:rounded-br-none lg:rounded-l-2xl lg:w-3/5 sDetails text-gray-300">
          <div className="aboutContainer">
          <h1 className="text-4xl text-white font-semibold mb-8">{serviceName}</h1>
           <p>{about}</p>
@@ -26,7 +26,7 @@ const ServiceInfo = ({service}) => {
 
           <div className="flex lg:flex-row flex-col-reverse justify-between items-center">
             <div className="highlightContainer">
-              <h1 className="text-3xl text-white font-medium mt-10 mb-6">
+              <h1 className="text-3xl highlights text-white font-medium mt-10 mb-6">
                 Hightlights
               </h1>
               <div>
@@ -55,7 +55,7 @@ const ServiceInfo = ({service}) => {
           </div>
         </div>
         <div className="w-11/12 mx-auto lg:w-2/5">
-          <img className="h-full lg:rounded-r-2xl rounded-t-2xl" src={picture} alt="" />
+          <img className="h-full lg:rounded-r-2xl lg:rounded-tl-none rounded-t-2xl" src={picture} alt="" />
         </div>
       </div>
     </div>

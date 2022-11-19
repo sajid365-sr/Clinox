@@ -128,22 +128,22 @@ const Header = () => {
           <Navbar.Toggle />
           <Navbar.Collapse>
             
-            <Link className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3 hover:bg-gray-400 lg:px-0 py-1 lg:py-0" to="/home">
+            <Link className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3  lg:px-0 py-1 lg:py-0" to="/home">
               <li>Home</li>
             </Link>
-            <Link  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3 hover:bg-gray-400 lg:px-0 py-1 lg:py-0" to="/services">
+            <Link  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3  lg:px-0 py-1 lg:py-0" to="/services">
               <li>Services</li>
             </Link>
-            <Link  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3 hover:bg-gray-400 lg:px-0 py-1 lg:py-0" to="/blog">
+            <Link  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3  lg:px-0 py-1 lg:py-0" to="/blog">
               <li>Blog</li>
             </Link>
             {user?.uid && (
               <>
-                <Link to='/addServices'  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3 hover:bg-gray-400 lg:px-0 py-1 lg:py-0">
+                <Link to='/addServices'  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3  lg:px-0 py-1 lg:py-0">
                   <li>Add Services +</li>
                 </Link>
 
-                <Link to='/myReviews'  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3 hover:bg-gray-400 lg:px-0 py-1 lg:py-0">
+                <Link to='/myReviews'  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3  lg:px-0 py-1 lg:py-0">
                   <li>My Review</li>
                 </Link>
               </>

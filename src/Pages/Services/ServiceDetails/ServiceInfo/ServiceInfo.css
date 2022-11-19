@@ -34,6 +34,10 @@ h1 {
     h1::before{
         width: 100%;
     }
+    .highlights::before{
+        width: 55%;
+    }
+    
 }
   .aboutContainer:hover h1::before {
     transform-origin: left;

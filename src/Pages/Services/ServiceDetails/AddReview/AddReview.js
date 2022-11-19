@@ -1,10 +1,15 @@
 import { Rating } from "flowbite-react";
 import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import addReview from "../../../../Assets/addReview.png";
 import { UserContext } from "../../../../contexts/AuthContext/AuthContext";
 
-const AddReview = () => {
+const AddReview = ({service}) => {
+
+  const {_id, serviceName} = service;
   const { user } = useContext(UserContext);
+  const location = useLocation();
   
   const [name, SetName] = useState('');
   const [feedback, SetFeedback] = useState('');
@@ -43,7 +48,9 @@ const AddReview = () => {
       feedback,
       address,
       ratings,
-      email: user.email
+      email: user.email,
+      id:_id,
+      serviceName
     }
 
     fetch('http://localhost:5000/reviews', {
@@ -55,10 +62,12 @@ const AddReview = () => {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data);
+      if(data.acknowledged){
+        toast.success('Thanks for your feedback');
+      }
     })
-
-    console.log(review);
+    
+  event.target.reset();
   }
 
   return (
@@ -68,7 +77,7 @@ const AddReview = () => {
           <img src={addReview} alt="" />
         </div>
 
-        <div className="lg:p-24 p-10 w-full mx-auto lg:w-1/2 text-white">
+        <div className="lg:p-16 p-10 w-full mx-auto lg:w-1/2 text-white">
           <form onSubmit={handleSubmit} action="" className="flex flex-col gap-5">
             {/* Name Field */}
             <div className="relative bg-gray-600 px-5 py-2 rounded-lg z-0 mb-6 w-full group">
@@ -80,7 +89,7 @@ const AddReview = () => {
                 className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#0E3D4B] peer"
                 placeholder=" "
                 required
-                onClick={defaultName}
+                onClick={user && defaultName}
               />
               <label
                 htmlFor="floating_name"
@@ -98,7 +107,7 @@ const AddReview = () => {
                 className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#0E3D4B] peer"
                 placeholder=" "
                 required
-                onClick={defaultEmail}
+                onClick={user && defaultEmail}
                 readOnly
               />
               <label
@@ -161,7 +170,12 @@ const AddReview = () => {
             }
               </Rating>
             </div>
-            <button type="submit" className="text-white bg-[#116680] hover:bg-[#18738f] focus:ring-2 focus:outline-none focus:ring-orange-400 font-medium rounded-lg text-sm w-full mt-8 px-5 py-2.5 text-center ">Submit</button>
+            {
+              user?.uid?
+              <button type="submit" className="text-white bg-[#116680] hover:bg-[#18738f] focus:ring-2 focus:outline-none focus:ring-orange-400 font-medium rounded-lg text-sm w-full mt-8 px-5 py-2.5 text-center ">Send Feedback</button>
+              :
+              <p className="text-center tracking-wider">Please <Link to='/login' className='underline text-blue-600' state={{from:location}} replace>Login</Link> to add review</p>
+            }
           </form>
 
         </div>

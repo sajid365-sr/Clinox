@@ -9,6 +9,7 @@ const Services = () => {
     const {setTitle} = useContext(UserContext);
    
     setTitle('Services')
+    
     return (
         <div>
             <h1 className='text-4xl font-semibold text-[#0E3D4B] text-center my-10'>Explore My Services</h1>

@@ -1,11 +1,14 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { UserContext } from '../../contexts/AuthContext/AuthContext';
 import ServiceCard from './ServiceCard/ServiceCard';
 
 const Services = () => {
     const services = useLoaderData();
+    const {setTitle} = useContext(UserContext);
    
+    setTitle('Services')
     return (
         <div>
             <h1 className='text-4xl font-semibold text-[#0E3D4B] text-center my-10'>Explore My Services</h1>

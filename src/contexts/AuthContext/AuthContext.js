@@ -14,6 +14,7 @@ const AuthContext = ({children}) => {
 
 const [user, setUser] = useState(null);
 const [loading, setLoading] = useState(true);
+const [title, setTitle] = useState('Clinox');
 
  // Email/Password sign up
  const createUser = (email, password) =>{
@@ -39,6 +40,8 @@ const logOut = () =>{
     return signOut(auth);
 }
 
+
+// Current User
 useEffect( () =>{
     const unsubscribe = onAuthStateChanged(auth, currentUser =>{
         setUser(currentUser);
@@ -50,7 +53,11 @@ useEffect( () =>{
 
 }, []);
 
-const AuthInfo = {user, loading, signIn, providerLogin, logOut, createUser, setUser}
+// Dynamic Title
+document.title = title;
+
+
+const AuthInfo = {user, loading, signIn, providerLogin, logOut, createUser, setUser, setTitle}
 
 
     return (

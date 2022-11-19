@@ -139,11 +139,11 @@ const Header = () => {
             </Link>
             {user?.uid && (
               <>
-                <Link  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3 hover:bg-gray-400 lg:px-0 py-1 lg:py-0" to="/addServices">
+                <Link to='/addServices'  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3 hover:bg-gray-400 lg:px-0 py-1 lg:py-0">
                   <li>Add Services +</li>
                 </Link>
 
-                <Link  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3 hover:bg-gray-400 lg:px-0 py-1 lg:py-0" to="review">
+                <Link to='/myReviews'  className="mb-3 lg:mb-0 ml-5 lg:ml-auto lg:bg-inherit bg-[#10586e] px-3 hover:bg-gray-400 lg:px-0 py-1 lg:py-0">
                   <li>My Review</li>
                 </Link>
               </>

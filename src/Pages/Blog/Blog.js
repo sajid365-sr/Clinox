@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../contexts/AuthContext/AuthContext";
 
 const Blog = () => {
+
+  const {setTitle} = useContext(UserContext);
+  setTitle('Blog')
+
   return (
     <div className="container mx-auto mb-24">
       <h3 className="text-center my-10 lg:text-4xl text-3xl font-semibold">

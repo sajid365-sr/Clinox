@@ -1,7 +1,7 @@
 import { Rating } from "flowbite-react";
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
-import { Link, Navigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import addReview from "../../../../Assets/addReview.png";
 import { UserContext } from "../../../../contexts/AuthContext/AuthContext";
 

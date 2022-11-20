@@ -6,22 +6,19 @@ import ClientSay from "./ClientSay/ClientSay";
 import ServiceInfo from "./ServiceInfo/ServiceInfo";
 
 const ServiceDetails = () => {
-  const  service  = useLoaderData();
-  const {setTitle} = useContext(UserContext);
+  const service = useLoaderData();
+  
+  const { setTitle } = useContext(UserContext);
 
-  setTitle(`Service details (${service.serviceName})`)
+  setTitle(`Service details (${service.serviceName})`);
 
   return (
     <div>
-        <ServiceInfo 
-        service={service}
-        ></ServiceInfo>
-        <ClientSay
-        service={service}
-        ></ClientSay>
-        <AddReview
-        service={service}
-        ></AddReview>
+      <ServiceInfo service={service}></ServiceInfo>
+
+      <ClientSay service={service}></ClientSay>
+
+      <AddReview service={service}></AddReview>
     </div>
   );
 };

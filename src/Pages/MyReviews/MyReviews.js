@@ -1,13 +1,16 @@
+
+
 import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { UserContext } from "../../contexts/AuthContext/AuthContext";
 import Review from "./Review/Review";
+import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
 
 const MyReviews = () => {
   const { setTitle, user } = useContext(UserContext);
   const [reviews, setReviews] = useState([]);
   setTitle("My reviews");
-  console.log(reviews);
+  
   useEffect(() => {
     fetch("http://localhost:5000/userEmail", {
       method: "POST",
@@ -36,8 +39,15 @@ const MyReviews = () => {
       });
   };
 
+  const updateReview = (id) =>{
+      
+    console.log(id)
+  }
+
+ 
+
   return (
-    <div className="h-[70vh] max-w-screen-xl mx-auto my-10">
+    <div className="h-full  w-11/12 lg:max-w-screen-xl mx-auto my-10">
       <h1 className="font-medium tracking-wider text-xl mb-5">
         You have{" "}
         <span className="text-[#0E3D4B] text-2xl font-semibold">
@@ -50,8 +60,12 @@ const MyReviews = () => {
           key={review._id}
           review={review}
           deleteReview={deleteReview}
+          updateReview={updateReview}
         ></Review>
       ))}
+    
+
+
     </div>
   );
 };

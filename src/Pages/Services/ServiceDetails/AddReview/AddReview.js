@@ -163,7 +163,7 @@ const AddReview = ({service}) => {
               <p  className="text-center mb-3">Want to rate our service?</p>
               <Rating className="justify-center gap-3">
             {
-             [...new Array(5).keys()].map(star => <span key={star} className="scale-125" onClick={ () => SetRatings(star+1)}>
+             [...new Array(5).keys()].map(star => <span  key={star} className="scale-125" onClick={ () => SetRatings(star+1)}>
                <Rating.Star  filled={false} />
                
              </span>  )

@@ -1,9 +1,9 @@
 import { Avatar, Carousel, Rating } from "flowbite-react";
-import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../../../contexts/AuthContext/AuthContext";
+import React, { useEffect, useState } from "react";
+
 
 const ClientSay = ({ service }) => {
-  // const {user} = useContext(UserContext);
+  
   const [clients, setClients] = useState([]);
 
   const { _id } = service;

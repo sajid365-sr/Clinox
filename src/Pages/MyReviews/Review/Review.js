@@ -1,11 +1,10 @@
 
-import { Avatar, Rating, Textarea } from 'flowbite-react';
+import { Avatar, Rating } from 'flowbite-react';
 import React from 'react';
 import { FaTimes, FaEdit, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
 import { Link, useLocation } from 'react-router-dom';
 
-const Review = ({review, deleteReview, updateReview}) => {
+const Review = ({review, deleteReview }) => {
 
     const {address, feedback, name, photo, serviceName, ratings, _id } = review;
     const location = useLocation();
@@ -40,7 +39,7 @@ const Review = ({review, deleteReview, updateReview}) => {
                 </div>
                 <div className='flex gap-5 justify-evenly lg:w-[10%]'>
                     <Link to={`/editReview/${_id}`} state={{from:location}} replace>
-                    <FaEdit onClick={() => updateReview(_id)} className='lg:text-4xl text-2xl text-[#0E3D4B]' title='Edit review'></FaEdit>
+                    <FaEdit  className='lg:text-4xl text-2xl text-[#0E3D4B]' title='Edit review'></FaEdit>
                     </Link>
 
                     <FaTimes onClick={ () => deleteReview(_id)} className='lg:text-4xl text-2xl text-[#0E3D4B]' title='Delete review'></FaTimes>

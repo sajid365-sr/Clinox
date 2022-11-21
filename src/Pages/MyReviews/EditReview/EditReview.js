@@ -1,14 +1,14 @@
 
 import { Rating } from 'flowbite-react';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import AddReview from '../../../Assets/addReview.png';
-import { UserContext } from '../../../contexts/AuthContext/AuthContext';
+
 
 const EditReview = () => {
 
-  const {user} = useContext(UserContext);
+
   const [newFeedback, SetFeedback] = useState('');
 
   const [reviews] = useLoaderData();
@@ -34,6 +34,7 @@ const EditReview = () => {
       method:'PUT',
       headers:{
         'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('Clinox-JW-Token')}`,
       },
       body:JSON.stringify(review),
     })
@@ -47,10 +48,6 @@ const EditReview = () => {
     })
 
   }
-
-
-
-
 
     return (
         <div className="container bg-gray-800 w-11/12 lg:w-full rounded-lg mx-auto my-20">

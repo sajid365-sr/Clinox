@@ -24,33 +24,42 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-
-    //Get JWT
-    fetch('http://localhost:5000/jwt')
-    .then(res => res.json())
-    .then(data => {
-        localStorage.setItem('Clinox JW Token',JSON.stringify(data))
-    })
-
     // email-password login
     signIn(email, password)
       .then((result) => {
         setUser(result.user);
-        form.reset();
+        const user = result.user;
+        const currentUser = {
+          email: user.email,
+        };
+
+        //Get JWT
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("Clinox-JW-Token", data.token);
+            form.reset();
+           
+          });
+
         setError("");
         navigate(from, { replace: true });
       })
       .catch((e) => {
         setError(e.message);
       });
-
   };
 
   // Google sign in
   const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
       .then((result) => {
-        console.log(result.user);
         navigate(from, { replace: true });
       })
       .catch((e) => console.error(e));
@@ -60,7 +69,6 @@ const Login = () => {
   const handleFacebookSignIn = () => {
     providerLogin(facebookProvider)
       .then((result) => {
-        console.log(result.user);
         navigate(from, { replace: true });
       })
       .catch((e) => console.error(e));

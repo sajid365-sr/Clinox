@@ -86,7 +86,7 @@ const AddReview = ({service}) => {
                 type="text"
                 name="floating_name"
                 id="floating_name"
-                className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#0E3D4B] peer"
+                className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#155c72] focus:border-b-3 peer"
                 placeholder=" "
                 required
                 onClick={user && defaultName}
@@ -104,7 +104,7 @@ const AddReview = ({service}) => {
                 type="email"
                 name="floating_email"
                 id="floating_email"
-                className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#0E3D4B] peer"
+                className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#155c72] focus:border-b-3 peer"
                 placeholder=" "
                 required
                 onClick={user && defaultEmail}
@@ -125,7 +125,7 @@ const AddReview = ({service}) => {
                 type="text"
                 name="floating_comment"
                 id="floating_comment"
-                className="block pt-5 px-5 w-full text-base text-white bg-transparent border-0  border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#0E3D4B] peer"
+                className="block pt-5 px-5 w-full text-base text-white bg-transparent border-0  border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#155c72] focus:border-b-3 peer"
                 placeholder=" "
                 required
                 
@@ -145,7 +145,7 @@ const AddReview = ({service}) => {
                 type="text"
                 name="floating_address"
                 id="floating_address"
-                className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#0E3D4B] peer"
+                className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#155c72] focus:border-b-3 peer"
                 placeholder=" "
                 required
                 

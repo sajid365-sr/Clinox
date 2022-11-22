@@ -30,7 +30,7 @@ const ServiceInfo = ({service}) => {
                 Hightlights
               </h1>
               <div>
-                {highlights.map((feature) => (
+                {highlights?.map((feature) => (
                   <li key={feature}>{feature}</li>
                 ))}
               </div>

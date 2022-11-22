@@ -11,7 +11,7 @@ const MyReviews = () => {
 
   
   useEffect(() => {
-    fetch("http://localhost:5000/myReview", {
+    fetch("https://clinox.vercel.app/myReview", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -33,7 +33,7 @@ const MyReviews = () => {
   }, [user, logOut]);
 
   const deleteReview = (id) => {
-    fetch(`http://localhost:5000/deleteReview/${id}`, {
+    fetch(`https://clinox.vercel.app/deleteReview/${id}`, {
       method: "DELETE",
       headers:{
         authorization: `Bearer ${localStorage.getItem('Clinox-JW-Token')}`,

@@ -7,7 +7,7 @@ const ServiceHIghLight = () => {
     const [services, setServices] = useState([]);
 
     useEffect( () =>{
-        fetch('http://localhost:5000/servicesH?dataCount=3')
+        fetch('https://clinox.vercel.app/servicesH?dataCount=3')
         .then(res => res.json())
         .then(data => {
             setServices(data);

@@ -9,7 +9,7 @@ const ClientSay = ({ service }) => {
   const { _id } = service;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${_id}`)
+    fetch(`https://clinox.vercel.app/reviews/${_id}`)
       .then((res) => res.json())
       .then((data) => {
         setClients(data);

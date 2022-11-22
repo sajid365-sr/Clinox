@@ -34,7 +34,7 @@ const Login = () => {
         };
 
         //Get JWT
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://clinox.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",

@@ -65,7 +65,7 @@ const handleSubmit = (event) =>{
         about:description,
     }
 
-    fetch('http://localhost:5000/addService', {
+    fetch('https://clinox.vercel.app/addService', {
         method:'POST',
         headers:{
             'content-type':'application/json',
@@ -85,7 +85,8 @@ const handleSubmit = (event) =>{
 }
 
   return (
-    <div className="max-w-screen-lg mx-auto my-[7%] py-20 px-16 rounded-lg bg-gray-800">
+    <div className="max-w-screen-lg mx-auto my-[7%] pt-10 pb-20 px-16 rounded-lg bg-gray-800">
+        <h1 className="text-white text-center mb-8 text-4xl">Let's add a new service</h1>
       <form onSubmit={handleSubmit}>
         <div className="relative z-0 mb-6 w-full group">
           <input

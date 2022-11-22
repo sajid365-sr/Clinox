@@ -1,9 +1,7 @@
 import { Avatar, Carousel, Rating } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 
-
 const ClientSay = ({ service }) => {
-  
   const [clients, setClients] = useState([]);
 
   const { _id } = service;

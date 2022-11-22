@@ -1,52 +1,44 @@
 import React, { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Button, Card, Checkbox, Label, TextInput } from "flowbite-react";
 import signUpGraphic from "../../../../Assets/Login/SignUp.jpg";
 import { UserContext } from "../../../../contexts/AuthContext/AuthContext";
 
 const SignUp = () => {
+  const [error, setError] = useState("");
+  const [accepted, setAccepted] = useState(false);
+  const { createUser, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
-    const [error, setError] = useState("");
-    const [accepted, setAccepted] = useState(false);
-    const {createUser, setUser} = useContext(UserContext);
-    const navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-
-
-    const handleSubmit = event =>{
-        event.preventDefault();
-
-    
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     const confirm = form.confirm.value;
 
-        if(password === confirm){
-            createUser(email, password)
-    .then((result) => {
-    console.log(result.user)
-      setError("");
-      form.reset();
-      setUser(null);
-      navigate('/login');
-    })
-    .catch((e) => {
-      setError(e.message);
-    });
-        }else{
-            setError('Password does not match')
-        }
-
-    
+    if (password === confirm) {
+      createUser(email, password)
+        .then((result) => {
+          setError("");
+          form.reset();
+          setUser(null);
+          navigate("/login");
+        })
+        .catch((e) => {
+          setError(e.message);
+        });
+    } else {
+      setError("Password does not match");
     }
+  };
 
-    const handleAccepted = (event) => {
-        setAccepted(event.target.checked);
-      };
-    
+  const handleAccepted = (event) => {
+    setAccepted(event.target.checked);
+  };
 
   return (
     <div className="flex justify-evenly container my-24">
@@ -56,9 +48,9 @@ const SignUp = () => {
       <div className="lg:w-1/3 w-10/12">
         <Card>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <h5 className="text-3xl text-center font-medium text-gray-900 dark:text-white">
-            SignUp
-          </h5>
+            <h5 className="text-3xl text-center font-medium text-gray-900 dark:text-white">
+              SignUp
+            </h5>
             <div>
               <div className="mb-2 block">
                 <Label htmlFor="name" value="Your Name" />
@@ -102,20 +94,22 @@ const SignUp = () => {
               />
             </div>
             <div className="flex items-center gap-2">
-              <Checkbox id="remember"  onClick={handleAccepted} />
+              <Checkbox id="remember" onClick={handleAccepted} />
               <Label htmlFor="remember">Remember me</Label>
             </div>
-            <Button className="my-5" type="submit" disabled={!accepted}>Submit</Button>
+            <Button className="my-5" type="submit" disabled={!accepted}>
+              Submit
+            </Button>
             <div className="text-sm font-medium text-gray-500 text-center dark:text-gray-300">
-            Already have an account?{" "}
-            <Link
-              to="/login"
-              className="text-blue-700 hover:underline dark:text-blue-500"
-            >
-              Login
-            </Link>
-          </div>
-         <p className="text-red-600 text-center font-sans">{error}</p>
+              Already have an account?{" "}
+              <Link
+                to="/login"
+                className="text-blue-700 hover:underline dark:text-blue-500"
+              >
+                Login
+              </Link>
+            </div>
+            <p className="text-red-600 text-center font-sans">{error}</p>
           </form>
         </Card>
       </div>

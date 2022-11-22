@@ -1,33 +1,32 @@
 import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { UserContext } from "../../contexts/AuthContext/AuthContext";
+import useTitle from "../Shared/SetTitle/Title";
 import Review from "./Review/Review";
 
-
 const MyReviews = () => {
-  const { setTitle, user, logOut } = useContext(UserContext);
+  const { user, logOut } = useContext(UserContext);
   const [reviews, setReviews] = useState([]);
-  setTitle("My reviews");
 
-  
+  useTitle("My reviews");
+
   useEffect(() => {
     fetch("https://clinox.vercel.app/myReview", {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem('Clinox-JW-Token')}`,
+        authorization: `Bearer ${localStorage.getItem("Clinox-JW-Token")}`,
       },
       body: JSON.stringify({ email: user.email }),
     })
       .then((res) => {
-        if(res.status === 401 || res.status === 403){
-          console.log(res)
+        if (res.status === 401 || res.status === 403) {
           return logOut();
         }
-        return res.json()})
+        return res.json();
+      })
 
       .then((data) => {
-        
         setReviews(data);
       });
   }, [user, logOut]);
@@ -35,9 +34,9 @@ const MyReviews = () => {
   const deleteReview = (id) => {
     fetch(`https://clinox.vercel.app/deleteReview/${id}`, {
       method: "DELETE",
-      headers:{
-        authorization: `Bearer ${localStorage.getItem('Clinox-JW-Token')}`,
-      }
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("Clinox-JW-Token")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -48,8 +47,6 @@ const MyReviews = () => {
         }
       });
   };
-
-  
 
   return (
     <div className="h-full lg:h-[70vh] w-11/12 lg:max-w-screen-xl mx-auto my-10">
@@ -74,7 +71,6 @@ const MyReviews = () => {
           key={review._id}
           review={review}
           deleteReview={deleteReview}
-         
         ></Review>
       ))}
     </div>

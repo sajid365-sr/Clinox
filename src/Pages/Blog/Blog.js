@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
-import { UserContext } from "../../contexts/AuthContext/AuthContext";
+import React from "react";
+import useTitle from "../Shared/SetTitle/Title";
 
 const Blog = () => {
-
-  const {setTitle} = useContext(UserContext);
-  setTitle('Blog')
+  useTitle("Blog");
 
   return (
     <div className="container mx-auto mb-24">
@@ -53,7 +51,8 @@ const Blog = () => {
           environment that allows the javascript to be run on the server-side.
           Nodejs allows Javascript code to run outside the browser. Nodejs comes
           with a lot of modules and mostly used in web development.
-        </p><br />
+        </p>
+        <br />
         <p>
           Javascript: Javascript is a Scripting language. It is mostly
           abbreviated as JS. It can be said that Javascript is the updated
@@ -82,18 +81,30 @@ const Blog = () => {
           In the most common serialization format, compact serialization, the
           JWT looks something like this: xxxxx.yyyyy.zzzzz. Once decoded, you
           will get two JSON strings: <br />
-           1. The header and the payload. <br />
-            2. The
-          signature.
+          1. The header and the payload. <br />
+          2. The signature.
         </p>
       </article>
       <article className="mx-auto lg:w-3/4 w-10/12 rounded-lg lg:p-10 p-5 mb-5 bg-gray-300 bg-opacity-50">
         <h2 className="text-center font-semibold text-3xl pb-5 text-cyan-800">
-        How does Node JS handle multiple requests at the same time?
+          How does Node JS handle multiple requests at the same time?
         </h2>
         <p>
-        Given a NodeJS application, since Node is single threaded, say if processing involves a Promise.all that takes 8 seconds, does this mean that the client request that comes after this request would need to wait for eight seconds? No. NodeJS event loop is single threaded. The entire server architecture for NodeJS is not single threaded. <br />
-         Before getting into the Node server architecture, to take a look at typical multithreaded request response model, the web server would have multiple threads and when concurrent requests get to the webserver, the webserver picks threadOne from the threadPool and threadOne processes requestOne and responds to clientOne and when the second request comes in, the web server picks up the second thread from the threadPool and picks up requestTwo and processes it and responds to clientTwo. threadOne is responsible for all kinds of operations that requestOne demanded including doing any blocking IO operations.
+          Given a NodeJS application, since Node is single threaded, say if
+          processing involves a Promise.all that takes 8 seconds, does this mean
+          that the client request that comes after this request would need to
+          wait for eight seconds? No. NodeJS event loop is single threaded. The
+          entire server architecture for NodeJS is not single threaded. <br />
+          Before getting into the Node server architecture, to take a look at
+          typical multithreaded request response model, the web server would
+          have multiple threads and when concurrent requests get to the
+          webserver, the webserver picks threadOne from the threadPool and
+          threadOne processes requestOne and responds to clientOne and when the
+          second request comes in, the web server picks up the second thread
+          from the threadPool and picks up requestTwo and processes it and
+          responds to clientTwo. threadOne is responsible for all kinds of
+          operations that requestOne demanded including doing any blocking IO
+          operations.
         </p>
       </article>
     </div>

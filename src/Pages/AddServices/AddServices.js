@@ -1,92 +1,90 @@
 import { Rating } from "flowbite-react";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../contexts/AuthContext/AuthContext";
+import useTitle from "../Shared/SetTitle/Title";
 
 const AddServices = () => {
-  const { setTitle } = useContext(UserContext);
-  setTitle("Add services");
+  useTitle("Add services");
 
   const navigate = useNavigate();
 
-  const [serviceName, setServiceName] = useState('');
-  const [description, setDescription] = useState('');
+  const [serviceName, setServiceName] = useState("");
+  const [description, setDescription] = useState("");
   const [duration, setDuration] = useState();
   const [sRate, setSRate] = useState();
   const [ratings, setRatings] = useState();
   const [customer, setCustomer] = useState();
   const [serviceCharge, serServiceCharge] = useState();
-  const [picture, setPicture] = useState()
+  const [picture, setPicture] = useState();
 
-const handleName = (event) =>{
+  const handleName = (event) => {
     setServiceName(event.target.value);
-}
+  };
 
-const handleImage = (event) =>{
-    setPicture(event.target.value);    
-}
+  const handleImage = (event) => {
+    setPicture(event.target.value);
+  };
 
-const handleDescription = (event) =>{
+  const handleDescription = (event) => {
     setDescription(event.target.value);
-}
+  };
 
-const handleDuration = (event) =>{
+  const handleDuration = (event) => {
     setDuration(event.target.value);
-}
+  };
 
-const handleSRate = (event) =>{
+  const handleSRate = (event) => {
     setSRate(event.target.value);
-}
+  };
 
-const handleRatings = (event) =>{
+  const handleRatings = (event) => {
     setRatings(event.target.value);
-}
+  };
 
-const handleCustomer = (event) =>{
+  const handleCustomer = (event) => {
     setCustomer(event.target.value);
-}
+  };
 
-const handleServiceCharge = (event) =>{
+  const handleServiceCharge = (event) => {
     serServiceCharge(event.target.value);
-}
+  };
 
-const handleSubmit = (event) =>{
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     const serviceData = {
-        serviceCharge: `$${serviceCharge}`,
-        picture,
-        duration,
-        ratings,
-        satisfactionRate: sRate,
-        customer,
-        serviceName,
-        about:description,
-    }
+      serviceCharge: `$${serviceCharge}`,
+      picture,
+      duration,
+      ratings,
+      satisfactionRate: sRate,
+      customer,
+      serviceName,
+      about: description,
+    };
 
-    fetch('https://clinox.vercel.app/addService', {
-        method:'POST',
-        headers:{
-            'content-type':'application/json',
-        },
-        body:JSON.stringify(serviceData)
+    fetch("https://clinox.vercel.app/addService", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(serviceData),
     })
-    .then(res =>res.json())
-    .then(data => {
-        if(data.acknowledged){
-            toast.success('New services added successfully');
-            navigate('/services');
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("New services added successfully");
+          navigate("/services");
         }
-    })
-
-
-    console.log(serviceData)
-}
+      });
+  };
 
   return (
     <div className="max-w-screen-lg mx-auto my-[7%] pt-10 pb-20 px-16 rounded-lg bg-gray-800">
-        <h1 className="text-white text-center mb-8 text-4xl">Let's add a new service</h1>
+      <h1 className="text-white text-center mb-8 text-4xl">
+        Let's add a new service
+      </h1>
       <form onSubmit={handleSubmit}>
         <div className="relative z-0 mb-6 w-full group">
           <input
@@ -97,7 +95,6 @@ const handleSubmit = (event) =>{
             className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#155c72] focus:border-b-4 peer"
             placeholder=" "
             required
-            
           />
           <label
             htmlFor="floating_service_name"
@@ -115,7 +112,6 @@ const handleSubmit = (event) =>{
             className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#155c72] focus:border-b-4 peer"
             placeholder=" "
             required
-            
           />
           <label
             htmlFor="floating_image"
@@ -153,7 +149,6 @@ const handleSubmit = (event) =>{
               className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#155c72] focus:border-b-4 peer"
               placeholder=""
               required
-              
             />
             <label
               htmlFor="floating_duration"
@@ -170,7 +165,6 @@ const handleSubmit = (event) =>{
               id="floating_sRate"
               className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#155c72] focus:border-b-4 peer"
               placeholder=" "
-              
             />
             <label
               htmlFor="floating_sRate"
@@ -189,7 +183,6 @@ const handleSubmit = (event) =>{
               id="floating_ratings"
               className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#155c72] focus:border-b-4 peer"
               placeholder=" "
-
             />
             <label
               htmlFor="floating_ratings"
@@ -211,8 +204,6 @@ const handleSubmit = (event) =>{
               id="floating_customer"
               className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#155c72] focus:border-b-4 peer"
               placeholder=" "
-
-              
             />
             <label
               htmlFor="floating_customer"
@@ -224,7 +215,6 @@ const handleSubmit = (event) =>{
         </div>
 
         <div className="grid md:grid-cols-2 md:gap-6">
-       
           <div className="relative z-0 mb-6 w-full group">
             <input
               onBlur={handleServiceCharge}
@@ -233,7 +223,6 @@ const handleSubmit = (event) =>{
               id="floating_serviceCharge"
               className="block pt-3 px-5 w-full text-base text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#155c72] focus:border-b-4 peer"
               placeholder=" "
-              
             />
             <label
               htmlFor="floating_serviceCharge"
@@ -251,7 +240,6 @@ const handleSubmit = (event) =>{
           Add Services
         </button>
       </form>
-      
     </div>
   );
 };

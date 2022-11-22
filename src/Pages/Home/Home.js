@@ -1,22 +1,18 @@
-import React, { useContext } from "react";
-import { UserContext } from "../../contexts/AuthContext/AuthContext";
+import React from "react";
+import useTitle from "../Shared/SetTitle/Title";
 import Banner from "./Banner/Banner";
-import "./Home.css";
 import ServiceHIghLight from "./ServiceHIghLight/ServiceHIghLight";
 import WhyMe from "./WhyMe/WhyMe";
 
-
 const Home = () => {
- 
-  const {setTitle} = useContext(UserContext);
-  setTitle('Home')
+  useTitle("Home");
 
   return (
-   <div>
-     <Banner></Banner>
-     <ServiceHIghLight></ServiceHIghLight>
-     <WhyMe></WhyMe>
-   </div>
+    <div>
+      <Banner></Banner>
+      <ServiceHIghLight></ServiceHIghLight>
+      <WhyMe></WhyMe>
+    </div>
   );
 };
 

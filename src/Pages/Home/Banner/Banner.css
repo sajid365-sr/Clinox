@@ -1,58 +1,51 @@
-
-
-.homeBg{
-    background-image: url('../../../Assets/HomeBg.png');
-    height: 90vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    
+.homeBg {
+  background-image: url("../../../Assets/HomeBg.png");
+  height: 90vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.cleanMan{
-    z-index: 2;
+.cleanMan {
+  z-index: 2;
 }
-.parallelBar{
-    z-index: 1;
+.parallelBar {
+  z-index: 1;
 }
 
 @keyframes cleaner {
-    0%{
-        transform: translateX(0px);
-        transform: translateY(0px);
-    }
-    50%{
-        
-        transform: translateY(-10px);
-    }
-    100%{
-        transform: translateX(20px);
-        
-       
-    }
+  0% {
+    transform: translateX(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
 }
 
 @keyframes expShape {
-    0%{
-        transform: rotate(0deg);
-    }
-    25%{
-        transform: rotate(90deg);
-    }
-    50%{
-        transform: rotate(180deg);
-    }
-    75%{
-        transform: rotate(270deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.cleaner{
-    animation: cleaner 1.5s ease-in-out infinite alternate-reverse;
+.cleaner {
+  animation: cleaner 1.5s ease-in-out infinite alternate-reverse;
 }
-.expShape{
-    animation: expShape 2s ease-in-out  infinite forwards ;
+.expShape {
+  animation: expShape 2s ease-in-out infinite forwards;
 }

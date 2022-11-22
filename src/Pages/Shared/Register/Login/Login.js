@@ -45,7 +45,6 @@ const Login = () => {
           .then((data) => {
             localStorage.setItem("Clinox-JW-Token", data.token);
             form.reset();
-           
           });
 
         setError("");

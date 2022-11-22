@@ -1,51 +1,46 @@
-
-
-.sDetails{
-    background-image:linear-gradient(to right, #0E3D4B, #0e3d4ba6), url('../../../../Assets/sDetailsBg.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    
+.sDetails {
+  background-image: linear-gradient(to right, #0e3d4b, #0e3d4ba6),
+    url("../../../../Assets/sDetailsBg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-
 
 h1 {
-    color: #18272F;
-    position: relative;
-    text-decoration: none;
-  }
-  
-  h1::before {
-    content: '';
-    position: absolute;
-    width: 58%;
-    height: 3px;
-    border-radius: 4px;
-    margin-top: 3px;
-    background-color: #fb923c;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .3s ease-in-out;
-  }
-  
-@media screen and (max-width:640px) {
-    h1::before{
-        width: 100%;
-    }
-    .highlights::before{
-        width: 55%;
-    }
-    
+  color: #18272f;
+  position: relative;
+  text-decoration: none;
 }
-  .aboutContainer:hover h1::before {
-    transform-origin: left;
-    transform: scaleX(1);
+
+h1::before {
+  content: "";
+  position: absolute;
+  width: 58%;
+  height: 3px;
+  border-radius: 4px;
+  margin-top: 3px;
+  background-color: #fb923c;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 640px) {
+  h1::before {
+    width: 100%;
   }
-  
-  .highlightContainer:hover h1::before {
-    transform-origin: left;
-    transform: scaleX(1);
+  .highlights::before {
+    width: 55%;
   }
-  
+}
+.aboutContainer:hover h1::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.highlightContainer:hover h1::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}

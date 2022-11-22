@@ -12,12 +12,22 @@ const ServiceCard = ({ service }) => {
       <div className="max-w-sm mb-8">
         <Card className="shadow-xl">
           <PhotoProvider
-           speed={() => 800}
-           easing={(type) => (type === 2 ? 'cubic-bezier(0.36, 0, 0.66, -0.56)' : 'cubic-bezier(0.34, 1.56, 0.64, 1)')}
+            speed={() => 800}
+            easing={(type) =>
+              type === 2
+                ? "cubic-bezier(0.36, 0, 0.66, -0.56)"
+                : "cubic-bezier(0.34, 1.56, 0.64, 1)"
+            }
           >
-          <PhotoView src={picture}>
-            <img className="rounded-lg scale-105 cursor-pointer hover:scale-110 transition-all duration-500" src={picture} title='Click to photo view' style={{ objectFit: "cover" }} alt="" />
-          </PhotoView>
+            <PhotoView src={picture}>
+              <img
+                className="rounded-lg scale-105 cursor-pointer hover:scale-110 transition-all duration-500"
+                src={picture}
+                title="Click to photo view"
+                style={{ objectFit: "cover" }}
+                alt=""
+              />
+            </PhotoView>
           </PhotoProvider>
 
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
